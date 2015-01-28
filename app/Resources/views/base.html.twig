@@ -1,13 +1,155 @@
 <!DOCTYPE html>
+<!--
+	Yara Boats Corporate Website
+        by Alexandre Moufarek
+        aarkyteckt
+
+        Based on
+        Helios by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-    <head>
+    <head>        
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta name="description" content="" />
+	<meta name="keywords" content="" />
+
+        <title>{% block title %}Yara Boats{% endblock %}</title>
+        
+        {% block stylesheets %}
+            
+            {# WORKAROUND: Fonts in prod don't work with assetic:dump because they're referenced in css #}
+            <link href="{{ asset( 'bundles/yaraboatscatalog/css/style.css' ) }}" rel="stylesheet" />
+
+            {# Use of Assetic to combine all CSS files and serve them as a single file for Front end optimization #}
+            {# All files are stored in /src/YaraBoats/CatalogBundle/Resources/public #}
+            {# assets:install command copies all /Resources/public from all bundles to /web/bundles/<bundleName> #}
+            {# All files are copied to /web/bundles/yaraboatscatalog #}
+
+            {% stylesheets   
+                'bundles/yaraboatscatalog/css/skel.css' 
+                'bundles/yaraboatscatalog/css/style.css' 
+                'bundles/yaraboatscatalog/css/style-normal.css' 
+                'bundles/yaraboatscatalog/css/style-noscript.css' 
+                'bundles/yaraboatscatalog/css/sfx.css' 
+                'bundles/yaraboatscatalog/css/ideal-image-slider.css' 
+                'bundles/yaraboatscatalog/css/default.css' filter='cssrewrite' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+
+            {# IE 8 case management with specific CSS #}
+            <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+            
+        {% endblock %}
+        {% block javascripts %}
+            
+            {# Use of Assetic to combine all JS files and serve them as a single file for Front end optimization #}
+            {# All files are stored in /src/YaraBoats/PresentationBundle/Resources/public #}
+            {# assets:install command copies all /Resources/public from all bundles to /web/bundles/<bundleName> #}
+            {# All files are copied to /web/bundles/yaraboatscatalog #}
+            
+            {% javascripts 
+                'bundles/yaraboatscatalog/js/jquery.min.js'
+                'bundles/yaraboatscatalog/js/jquery.dropotron.min.js'
+                'bundles/yaraboatscatalog/js/jquery.scrolly.min.js'
+                'bundles/yaraboatscatalog/js/jquery.onvisible.min.js'
+                'bundles/yaraboatscatalog/js/skel.min.js'
+                'bundles/yaraboatscatalog/js/skel-layers.min.js'
+                'bundles/yaraboatscatalog/js/init.js' 
+                'bundles/yaraboatscatalog/js/sfx.js'
+                'bundles/yaraboatscatalog/js/ideal-image-slider.js'  %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+            
+            {# IE 8 case management with specific JS #}
+            <!--[if lte IE 8]><link href="{{ asset('css/ie/html5shiv.js') }}" /><![endif]-->
+            
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    
+    {# Putting the <body> opening tag in a specific block allows to switch the body class depending on the page #}
+    {# Each body class changes the header design #}
+    
+    {% block bodyClass %}
+    <body class="homepage">
+    {% endblock %}
+        
+        {% block body %}
+  
+            <!-- Header -->
+                    <div id="header">
+
+                            <!-- Inner -->
+                                    <div class="inner">
+                                            <header>
+                                                    <h1><a href="" id="logo">Yara Boats</a></h1>
+                                                    <hr />
+                                                    <p>Aquador, Bella & Flipper boats retailer in south of France</p>
+                                            </header>
+                                            <footer>
+                                                    <a href="#features" class="button circled scrolly">Discover</a>
+                                            </footer>
+                                    </div>
+
+                            <!-- Nav -->
+                                    <nav id="nav">
+                                            <ul>
+                                                    <li><a href="#aquador" class="scrolly">Aquador</a> </li>
+                                                    <li><a href="#bella" class="scrolly">Bella</a> </li>
+                                                    <li><a href="#flipper" class="scrolly">Flipper</a> </li>
+                                                    <li><a href="#footer">Contact us</a></li>
+                                            </ul>
+                                    </nav>
+
+                    </div>
+            
+            
+            <a href="#" class="scrollup" style="display: none;">Scroll</a>
+        {% endblock %}
+        
+        {% block footer %}
+            <!-- Footer -->
+                    <div id="footer">
+                            <div class="container">
+                                        <div class="row">
+                                            <div class="12u">
+                                                
+                                                <!-- Contact -->
+                                                <section class="contact">
+                                                                    <header>
+                                                                            <h2>Contact us</h2>
+                                                                    </header>
+                                            
+                                                                    <p>
+
+                                                                        <p>
+                                                                            <h3>YARA FRANCE</strong></h3>
+                                                                            Georges Moufarek</br>
+                                                                            Managing Director</br>
+                                                                            Tel: +33 (0) 6 09 67 46 18 - Fax: +33 (0) 9 55 68 96 98</br>
+                                                                            <a href="mailto:yarafrance@yahoo.com">yarafrance@yahoo.com</a></br>
+                                                                        </p>
+                                                                    </p>
+                                                                  
+                                                 </section>
+                                          
+                                                    <!-- Copyright -->
+                                                            <div class="copyright">
+                                                                    <ul class="menu">
+                                                                            <li>&copy; Yara Boats. All rights reserved.</li>
+                                                                    </ul>
+                                                            </div>
+
+                                            </div>
+
+                                    </div>
+                            </div>
+                    </div>
+
+        {% endblock %}
+
     </body>
+
 </html>

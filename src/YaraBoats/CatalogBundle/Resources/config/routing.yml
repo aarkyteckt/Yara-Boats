@@ -1,0 +1,19 @@
+yara_boats_catalog_homepage:
+    path:     /
+    defaults: { _controller: YaraBoatsCatalogBundle:HomePage:index }
+    
+yara_boats_catalog_aquador:
+    path:     /aquador
+    defaults: { _controller: YaraBoatsCatalogBundle:Catalog:aquador }
+
+yara_boats_catalog_bella:
+    path:     /bella
+    defaults: { _controller: YaraBoatsCatalogBundle:Catalog:bella }
+
+yara_boats_catalog_flipper:
+    path:     /flipper
+    defaults: { _controller: YaraBoatsCatalogBundle:Catalog:flipper }
+
+yara_boats_catalog_contact:
+    path:     /contact
+    defaults: { _controller: YaraBoatsCatalogBundle:Contact:contact }
