@@ -2,6 +2,10 @@ yara_boats_catalog_homepage:
     path:     /
     defaults: { _controller: YaraBoatsCatalogBundle:HomePage:index }
     
+yara_boats_catalog_homepage_FR:
+    path:     /fr
+    defaults: { _controller: YaraBoatsCatalogBundle:HomePage:indexFR }
+    
 yara_boats_catalog_aquador:
     path:     /aquador
     defaults: { _controller: YaraBoatsCatalogBundle:Catalog:aquador }

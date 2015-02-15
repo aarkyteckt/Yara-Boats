@@ -10,4 +10,9 @@ class HomePageController extends Controller
     {
         return $this->render('YaraBoatsCatalogBundle:HomePage:index.html.twig');
     }
+
+    public function indexFRAction()
+    {
+        return $this->render('YaraBoatsCatalogBundle:HomePage:indexFR.html.twig');
+    }
 }
