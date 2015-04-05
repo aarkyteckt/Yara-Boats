@@ -5,17 +5,29 @@
     
     {{ parent() }}
 
-    {#
-    <!-- Banner -->
+    <!-- Banner --> <div class="wrapper style2">
             <section id="banner">
                     <header>
-                            <p>
-                                
-                            </p>
-                    </header>
-            </section>
-    #}
-    
+                        <h2>D&eacute;couvrez nos bateaux</h2>
+                        <p>
+                            SELECTIONNEZ UNE MARQUE POUR EN SAVOIR PLUS
+                        </p>
+                     </header>
+
+                    <div class="row">
+                        <article class="2u special">
+                         </article>
+                         <article class="8u special">
+                            <a href="#aquador"class="scrolly"> <img src={{asset('bundles/yaraboatscatalog/images/aquador_logo.png')}} alt="aquadorlogo" /></a>
+                            <a href="#bella"class="scrolly"> <img src={{asset('bundles/yaraboatscatalog/images/bella_logo.png')}} alt="bellalogo" /></a>
+                            <a href="#flipper"class="scrolly"> <img src={{asset('bundles/yaraboatscatalog/images/flipper_logo.png')}} alt="flipperlogo" /></a>
+                         </article>
+                
+                    </div>
+
+            </section>   
+        </div>
+
     <!-- Aquador -->
             <div class="wrapper style1">
 
